@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* #root {
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat;
+  background-image: url("./assets/vector-JUL-2020-130.jpg");
+  object-position: center;
+  background-attachment: fixed;
+} */
+
+html,
+body {
+  position: relative;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+
+/* nav icon */
+.ham {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.hamRotate.active {
+  transform: rotate(45deg);
+}
+
+.hamRotate180.active {
+  transform: rotate(180deg);
+}
+
+.line {
+  fill: none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke: #000;
+  stroke-width: 5.5;
+  stroke-linecap: round;
+}
+
+.ham3 .top {
+  stroke-dasharray: 40 130;
+}
+
+.ham3 .middle {
+  stroke-dasharray: 40 140;
+}
+
+.ham3 .bottom {
+  stroke-dasharray: 40 205;
+}
+
+.ham3.active .top {
+  stroke-dasharray: 75 130;
+  stroke-dashoffset: -63px;
+}
+
+.ham3.active .middle {
+  stroke-dashoffset: -102px;
+}
+
+.ham3.active .bottom {
+  stroke-dasharray: 110 205;
+  stroke-dashoffset: -86px;
+}
+/* nav icon */
+
+/* news carousel */
+.news__carousel .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.news__carousel .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.news__carousel .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* news carousel */
+
+.card {
+  width: 90%;
+  height: 7rem;
+  overflow: hidden;
+  z-index: 99;
+  transition: all 350ms;
+}
+
+.card::before {
+  content: "";
+  background-color: rgb(255, 255, 127);
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 50%;
+  transform: translate(90%, -90%);
+  transition: transform 600ms;
+  opacity: 0.85;
+}
+
+.card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.card:hover::before {
+  transform: scale(2);
+}
+
+.news-card {
+  width: 90%;
+  height: 7rem;
+  overflow: hidden;
+  display: flex;
+  /* justify-content: space-between; */
+  position: relative;
+  transition: all 350ms;
+  cursor: pointer;
+}
+
+.news-card:hover {
+  background: #fff3ba;
+  transform: scale(1.08);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+.swiper-card {
+  width: 90%;
+  height: 7rem;
+  overflow: hidden;
+  display: flex;
+  /* justify-content: space-between; */
+  position: relative;
+  transition: all 350ms;
+  cursor: pointer;
+}
+
+.swiper-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.active {
+  color: rgb(237, 6, 6);
+}
+
+/* utilities */
+.jump:hover {
+  transform: translateY(-10%);
+}
+
+.exp:hover {
+  transform: scale(1.1);
+}
+
+/* utilities */
+/* first__carousel */
+.first__carousel .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.first__carousel .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.first__carousel .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* first__carousel */
+
+/* second carousel */
+.second__carousel .swiper {
+  width: 100%;
+  height: 100%;
+}
+.second__carousel .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.second__carousel .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: rgb(247, 247, 83);
+  z-index: 99;
+}
+
+.second__carousel .swiper-button-prev, .second__carousel .swiper-button-next {
+  color: black;
+} 
+
+/* .second__carousel .swiper-button-prev {
+  z-index: 50;
+  position: absolute;
+  top: -1rem;
+  transform: translate(1550%, -150%);
+} */
+/* second carousel */
+
+/* .swiper-wrapper {
+  border: 2px solid red;
+  overflow: auto;
+} */
