@@ -4,8 +4,8 @@ import App from './App.tsx'
 import './index.css'
 // import { Provider } from 'react-redux'
 // import { store } from './store/store.ts'
-import { ApiProvider } from "@reduxjs/toolkit/query/react"
-import { productsApi } from './store/slices/apiSlice.ts'
+// import { ApiProvider } from "@reduxjs/toolkit/query/react"
+// import { productsApi } from './store/slices/apiSlice.ts'
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
