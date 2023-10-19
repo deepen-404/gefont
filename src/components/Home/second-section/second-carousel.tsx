@@ -11,22 +11,24 @@ import "swiper/css/navigation";
 // import required modules
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import MoreButton from "../../../common/more-button";
+import useMobile from "../../../hooks/use-mobile";
 
 interface carouselProps {
     secondCarouselData: NewsArticle[];
 }
 
 const SecondCarousel = ({ secondCarouselData }: carouselProps) => {
+    const isMobile = useMobile();
     return (
-        <div className="w-full h-fit second__carousel">
+        <div className="w-full transition-all duration-200 ease-linear rounded-lg h-fit second__carousel">
             <div className="w-full h-fit">
-                <p className="p-2 pl-8 font-bold text-2xl ">Media Watch</p>
+                <p className="p-2 pl-8 text-2xl font-bold ">Media Watch</p>
             </div>
-            <div className="h-[10rem] w-full">
+            <div className="h-[12rem] w-full">
                 <>
                     <Swiper
                         loop={true}
-                        slidesPerView={2}
+                        slidesPerView={isMobile ? 1 : 2}
                         // centeredSlides={true}
                         spaceBetween={30}
                         pagination={{
@@ -40,7 +42,6 @@ const SecondCarousel = ({ secondCarouselData }: carouselProps) => {
                         modules={[Autoplay, Pagination, Navigation]}
                         className="mySwiper"
                     >
-                        <SwiperSlide>Slide 1</SwiperSlide>
                         {
                             secondCarouselData.map((article, index) => (
                                 <SwiperSlide key={index}>
@@ -52,7 +53,7 @@ const SecondCarousel = ({ secondCarouselData }: carouselProps) => {
                                                 }}
                                             ></div>
                                         </div>
-                                        <div className="absolute w-3/5 text-base text-left bottom-3 left-[7rem]"><p className="font-bold text-black">{article.title}</p></div>
+                                        <div className="absolute w-3/5 text-sm text-left bottom-3 left-[7rem]"><p className="font-semibold">{article.title}</p></div>
                                     </div>
                                 </SwiperSlide>
                             ))

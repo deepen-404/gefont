@@ -13,31 +13,33 @@ import "swiper/css/navigation";
 // import required modules
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import MoreButton from "../../../common/more-button";
+import useMobile from "../../../hooks/use-mobile";
 
 interface carouselProps {
   firstCarouselData: NewsArticle[];
 }
 
 const FirstCarousel = ({ firstCarouselData }: carouselProps) => {
+  const isMobile = useMobile()
   return (
-    <div className="w-full h-fit mb-[4rem] second__carousel">
-      <div className="w-fullh-fit">
-        <p className="p-2 pl-8 font-bold text-2xl ">Union Council</p>
+    <div className="mb-[4rem] second__carousel">
+      <div className="">
+        <p className="p-2 pl-8 text-2xl font-bold ">Union Council</p>
       </div>
-      <div className="h-[10rem] w-full">
+      <div className="h-[12rem] border-2 border-black">
         <>
           <Swiper
             loop={true}
-            slidesPerView={2}
+            slidesPerView={isMobile ? 1 : 2}
             // centeredSlides={true}
             spaceBetween={30}
             pagination={{
               dynamicBullets: true,
             }}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
+            // autoplay={{
+            //   delay: 2500,
+            //   disableOnInteraction: false,
+            // }}
             navigation={true}
             modules={[Autoplay, Pagination, Navigation]}
             className="mySwiper"
@@ -45,15 +47,18 @@ const FirstCarousel = ({ firstCarouselData }: carouselProps) => {
             {
               firstCarouselData.map((article, index) => (
                 <SwiperSlide key={index}>
-                  <div className="relative p-3 mx-auto bg-gray-100 rounded-lg shadow-md swiper-card">
-                    <div className="h-full w-fit">
-                      <div className="bg-center bg-no-repeat bg-cover h-[5.5rem] rounded-lg aspect-square justify-around"
-                        style={{
-                          backgroundImage: `url(${article.urlToImage})`,
-                        }}
-                      ></div>
+                  <div className="relative p-3 mx-auto bg-gray-100 rounded-lg shadow-md
+                  h-[7rem] lg:h-[10rem]
+                  fc-card
+                  ">
+                    <img
+                      className="block object-contain border-2 border-red-500"
+                      src={article.urlToImage}
+                      alt="news image"
+                    />
+
+                    <div className="absolute w-3/5 text-sm text-left border-2 lg:h-[2.5rem] overflow-hidden border-indigo-500 bottom-3 left-[7rem]"><p className="font-semibold">{article.title}</p>
                     </div>
-                    <div className="absolute w-3/5 text-base text-left bottom-3 left-[7rem]"><p className="font-bold text-black">{article.title}</p></div>
                   </div>
                 </SwiperSlide>
               ))

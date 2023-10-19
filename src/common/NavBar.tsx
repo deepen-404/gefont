@@ -54,7 +54,7 @@ function NavBar() {
 
     return (
         <div className={`fixed top-0 left-0 mb-1 w-full rounded-sm shadow-sm bg-[#fff3ba] z-[99999] ${scrolled && "shadow-xl border-b"}`}>
-            <nav className="relative flex items-center justify-between p-2 pl-6 lg:justify-around">
+            <nav className={`relative flex items-center px-3 transition-all duration-100 ease-linear justify-between pl-6 lg:justify-around ${scrolled ? "py-3" : "py-4"} `}>
                 {/* logo */}
                 <div className="overflow-hidden rounded-sm h-14 w-14">
                     <img src={logo} alt="Logo" />
@@ -70,7 +70,7 @@ function NavBar() {
                         }`}
                 >
                     <div className="fixed z-10 w-full overflow-hidden lg:relative ">
-                        <ul className={`gap-20 lg:flex bg-[#fff3ba] w-full md:w-[60%] rounded-lg shadow-2xl lg:shadow-none
+                        <ul className={`gap-[4.5rem] lg:flex bg-[#fff3ba] w-full md:w-[60%] rounded-lg shadow-2xl lg:shadow-none font-semibold
                         ${isMobile && "h-screen px-4 py-2 fixed -translate-x-[4.5rem] sm:-translate-x-[4.8rem] md:-translate-x-[5rem] -translate-y-[3rem]"}
                         `}>
                             {navData.map((item) => (

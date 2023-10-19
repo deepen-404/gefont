@@ -47,7 +47,7 @@ const NewsCarousel = ({ newsCarouselData }: NewsCarouselProps) => {
                             >
                                 <div className='absolute inset-0 bg-black opacity-50'></div>
                                 <div className='absolute bottom-10 left-6'>
-                                    <p className='relative w-[70%] text-left z-10 text-2xl font-bold text-gray-100 ab'>{article.title}</p>
+                                    <p className='relative w-[70%] text-left z-10 text-xl font-bold text-gray-100 ab'>{article.title}</p>
                                 </div>
                             </div>
                         </SwiperSlide>

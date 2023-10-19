@@ -6,7 +6,7 @@ interface eventDataProps {
 const ForthComingEvents = ({ eventData }: eventDataProps) => {
     return (
         <div className="h-full">
-            <p className="p-2 pl-8 font-bold text-2xl">ForthComing Events</p>
+            <p className="p-2 pl-8 text-2xl font-bold">ForthComing Events</p>
             <div className="w-full">
                 {
                     eventData.map((article, index) => (
@@ -18,7 +18,7 @@ const ForthComingEvents = ({ eventData }: eventDataProps) => {
                                     }}
                                 ></div>
                             </div>
-                            <div className="absolute w-3/5 text-base text-left bottom-3 left-[7rem]"><p className="font-bold text-black">{article.title}</p></div>
+                            <div className="absolute w-3/5 text-left bottom-3 left-[7rem]"><p className="text-sm font-semibold">{article.title}</p></div>
                         </div>
                     ))
                 }
